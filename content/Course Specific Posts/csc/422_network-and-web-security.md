@@ -6,8 +6,11 @@ draft: true
 
 ## Vagrantfile
 
-The Vagrantfile is located [here](../../../../files/)
+The Vagrantfile is located [here](../../../../files/2021-spring/csc/422/Vagrantfile)
+
+To use, [follow the instructions](../../../instructions/students/)
 
 ## Not yet working
 
 - Promiscuous mode (can manually configure in VirtualBox)
+- Routing through the proxy VM
