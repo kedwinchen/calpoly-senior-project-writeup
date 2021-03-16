@@ -6,9 +6,9 @@ draft: true
 
 ## Vagrantfile
 
-The Vagrantfile is located [here](../../../../files/2021-spring/csc/422/Vagrantfile)
+The Vagrantfile is located [here]({{< relref "/" >}}../files/2021-spring/csc/422/Vagrantfile)
 
-To use, [follow the instructions](../../../instructions/students/)
+To use, [follow the instructions]({{< relref "/instructions/students" >}})
 
 ## Not yet working
 

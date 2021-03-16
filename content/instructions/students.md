@@ -4,7 +4,7 @@ date: 2021-03-09T12:25:30-08:00
 draft: true
 ---
 
-1. Follow the [common procedures](../common)
+1. Follow the [common procedures]({{< relref "./common" >}})
 2. Obtain the `Vagrantfile` for the course
 
         Note: Vagrant requires that the Vagrantfile does not have an extension.
