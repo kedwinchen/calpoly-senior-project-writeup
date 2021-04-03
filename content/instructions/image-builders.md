@@ -10,7 +10,7 @@ There are two options available for Linux VMs: Using Packer, and Manually
 
 ### Using Packer (automated)
 
-1. Follow the [common procedures](../common)
+1. Follow the [common procedures]({{< relref "./common" >}})
 2. Install Hashicorp Packer
 3. Select a Base Box to use (usually, you will want to pick either `kedwinchen/lubuntu` or `generic/centos8`. Though most of the `generic/*` Boxes are good choices -- just be sure it supports the VirtualBox provider)
 4. If you are using the template Packer file (`build.pkr.hcl`), you should use the template `provision.sh` script
@@ -22,7 +22,7 @@ There are two options available for Linux VMs: Using Packer, and Manually
 
 ### Manually
 
-1. Follow the [common procedures](../common)
+1. Follow the [common procedures]({{< relref "./common" >}})
 2. Create a new VirtualBox Virtual Machine (hereinafter: "VM"), and install the operating system of your choice. Suggested specs:
 
    - VM Name: (something memorable, you will need it later)

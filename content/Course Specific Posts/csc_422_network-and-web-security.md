@@ -1,0 +1,58 @@
+---
+title: "CSC 422: Network and Web Security"
+date: 2021-03-15T01:33:12-07:00
+draft: true
+---
+
+## Vagrantfile
+
+The `Vagrantfile` is located [here]({{< relref "/" >}}../files/2021-spring/csc/422/Vagrantfile)
+
+To use, [follow the instructions]({{< relref "/instructions/students" >}})
+
+## Special Notices/Instructions
+
+- All VMs except the `router` VM should not be directly connected to the network.
+  Even though the NAT adapter is connected, no traffic should leave through that adapter by default.
+  Traffic is routed instead to the `router` VM.
+- The `router` VM does not route traffic by default. This is intended (it is the first lab assignment, or so I am told).
+- There are multiple VMs in this `Vagrantfile`, so you will need to specify the VM name when using `vagrant ssh`
+  (i.e., instead of `vagrant ssh`, use `vagrant ssh client` or `vagrant ssh testing` to log into the `client` or `testing` VM, respectively)
+
+  | Virtual Machine  | Private Network IP Address |
+  | :--------------: | :------------------------: |
+  |     `router`     |      `192.168.22.101`      |
+  |    `testing`     |      `192.168.22.102`      |
+  | `metasploitable` |      `192.168.22.103`      |
+  |     `client`     |      `192.168.22.104`      |
+
+- The network configuration script to enable the VMs to talk to the `router` VM is
+  [located here]({{< relref "/">}}../files/2021-spring/csc/422/configure_networking.sh).
+
+  **_It is also run each time at boot._** If you encounter an error like the following, it is probably because the script has been updated.
+  To resolve the error, simply re-download the `Vagrantfile` and re-run `vagrant up`
+
+  ```
+  The calculated checksum of the requested file does not match the expected
+  checksum!
+
+  File source:         https:// <url snipped> /configure_networking.sh
+  Checksum type:       sha512
+  Expected checksum:   <checksum snipped>
+  Calculated checksum: <checksum snipped>
+
+  ```
+
+## System Requirements
+
+- Minimum specifications:
+
+  - RAM (memory): 5 GiB
+  - CPU (processor): amd64/x86_64 quad-core (or dual-core with Hyper-Threading)
+  - Disk space (hard drive/solid state): 32 GiB free space
+
+- Recommended specifications:
+
+  - RAM (memory): 16 GiB
+  - CPU (processor): amd64/x86_64 quad-core with Hyper-Threading
+  - Disk space (hard drive/solid state): 64 GiB free space
