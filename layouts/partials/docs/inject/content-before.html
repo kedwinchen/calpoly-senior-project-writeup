@@ -1,0 +1,13 @@
+<h1>{{ partial "docs/title" . }}</h1>
+
+{{ if .Draft }}
+<article class="markdown">
+<blockquote class="book-hint warning">
+<b>WARNING!</b>
+This page is (still) under construction!<br/>
+Information here is (likely) not complete, so not all cases may be addressed.<br/>
+If you find such a case, please email <a href="mailto:kchen75@calpoly.edu">kchen75@calpoly.edu</a>,
+or submit a Pull Request (edit link should be at the bottom of the page)<br/>
+</blockquote>
+</article>
+{{ end }}
