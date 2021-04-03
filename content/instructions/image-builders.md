@@ -43,7 +43,6 @@ There are two options available for Linux VMs: Using Packer, and Manually
 6. Install the following packages:
 
     - (needed for Oracle VM VirtualBox Guest Additions)
-      - `git`
       - `gcc`
       - `make`
       - `perl`
