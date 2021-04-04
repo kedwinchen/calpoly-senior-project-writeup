@@ -6,6 +6,9 @@ theme = "book"
 [params]
     enableGitInfo = true
     enableRobotsTXT = true
+    buildDrafts = true
+    buildExpired = false
+    buildFuture = false
 
     # For "book" theme
     BookSection = '*'
