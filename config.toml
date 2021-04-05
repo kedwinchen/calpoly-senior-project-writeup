@@ -1,7 +1,10 @@
-baseURL = "/senior-project/guide/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Senior Project Write-Up"
 theme = "book"
+
+# variable doesn't work
+FileHost = "https://vagrant-kedwin.chen.network"
 
 [params]
     enableGitInfo = true
@@ -17,6 +20,9 @@ theme = "book"
     BookRepo = 'https://gitlab.com/kedwinchen/edu.calpoly.cpe.senior-project.guide'
     # BookEditPath = '-/edit/latest-stable'
     BookEditPath = '-/blob/latest-stable'
+
+    # variable doesn't work
+    FileHost = "https://vagrant-kedwin.chen.network"
 
 [minify]
     minifyOutput = true
