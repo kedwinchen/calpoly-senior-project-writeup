@@ -1,7 +1,7 @@
 ---
 title: "Why Vagrant?"
 date: 2021-03-09T12:51:24-08:00
-draft: true
+draft: false
 ---
 
 After doing some research, I have determined that the simplest method would be to use Vagrant (FOSS, from HashiCorp) for the building, provisioning, and distribution of the environments.

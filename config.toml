@@ -1,8 +1,28 @@
-baseURL = "/senior-project/guide/"
+baseURL = "/"
 languageCode = "en-us"
 title = "Senior Project Write-Up"
-theme = "techdoc"
+theme = "book"
+
+# variable doesn't work
+FileHost = "https://vagrant-kedwin.chen.network"
 
 [params]
-    menu_style = "open-menu"
-    dateformat = "Monday, 02 Jan 2006 15:04:05 MST"
+    enableGitInfo = true
+    enableRobotsTXT = true
+    buildDrafts = true
+    buildExpired = false
+    buildFuture = false
+
+    # For "book" theme
+    BookSection = '*'
+    BookToC = true
+    BookTheme = 'auto' # one of ('light', 'dark', 'auto')
+    BookRepo = 'https://gitlab.com/kedwinchen/edu.calpoly.cpe.senior-project.guide'
+    # BookEditPath = '-/edit/latest-stable'
+    BookEditPath = '-/blob/latest-stable'
+
+    # variable doesn't work
+    FileHost = "https://vagrant-kedwin.chen.network"
+
+[minify]
+    minifyOutput = true

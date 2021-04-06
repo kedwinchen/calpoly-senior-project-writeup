@@ -2,6 +2,7 @@
 title: "Instructions"
 date: 2021-03-09T12:37:35-08:00
 draft: true
+weight: 10
 ---
 
 Students should follow the [instructions for students]({{< relref "./students" >}}).

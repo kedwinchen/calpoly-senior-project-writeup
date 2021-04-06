@@ -6,9 +6,9 @@ draft: false
 
 0. If you really need to build the Box from scratch, follow this guide.
    Otherwise, use the pre-built box from here (also built using these instructions): [https://app.vagrantup.com/kedwinchen/boxes/lubuntu-2004](https://app.vagrantup.com/kedwinchen/boxes/lubuntu-2004)
-2. Obtain a copy of the Lubuntu install disc from here:
+1. Obtain a copy of the Lubuntu install disc from here:
    [https://cdimage.ubuntu.com/lubuntu/releases/](https://cdimage.ubuntu.com/lubuntu/releases/).
-3. Create a new Virtual Machine (hereinafter: "VM"). Suggested specs:
+2. Create a new Virtual Machine (hereinafter: "VM"). Suggested specs:
 
    - VM Name: (something memorable, you will need it later)
    - System > CPU: 2 vCPU
@@ -18,9 +18,9 @@ draft: false
    - Network: 1 x NAT
    - USB Controller: 3.0 (xHCI)
 
-4. Install base system. Use `vagrant` as the both the username and password (convention; though may be expected by Vagrant later)
-5. Reboot the VM. The following instructions should be taken inside the VM, unless specified otherwise.
-6. Make `vagrant` be able to run `sudo` without prompting for a password (convention; though probably expected by Vagrant later)
+3. Install base system. Use `vagrant` as the both the username and password (convention; though may be expected by Vagrant later)
+4. Reboot the VM. The following instructions should be taken inside the VM, unless specified otherwise.
+5. Make `vagrant` be able to run `sudo` without prompting for a password (convention; though probably expected by Vagrant later)
 
    1. Open a terminal (usually under `Start Menu > System Tools`)
    2. Run the command: `visudo -f /etc/sudoers.d/99-vagrant`
@@ -30,23 +30,22 @@ draft: false
       vagrant ALL=(ALL:ALL) NOPASSWD: ALL
       ```
 
-7. Change the password for `root` to be `vagrant`
+6. Change the password for `root` to be `vagrant`
    (probably optional; this is just convention used by most publicly available Vagrant boxes)
-8. Update the package repository status: `apt-get update`
-9. Upgrade the installed packages (may not have installed during the install): `apt-get upgrade -y`
-10. Install the following packages (`apt-get install -y <packages>`)
+7. Update the package repository status: `apt-get update`
+8. Upgrade the installed packages (may not have installed during the install): `apt-get upgrade -y`
+9. Install the following packages (`apt-get install -y <packages>`)
 
-- (needed for Oracle VM VirtualBox Guest Additions)
-  - `git`
-  - `gcc`
-  - `make`
-  - `perl`
-- `openconnect` (for now, until this can no longer connect to Cal Poly VPN)
-- `openssh-server` (need for Vagrant)
+   - (needed for Oracle VM VirtualBox Guest Additions)
+     - `gcc`
+     - `make`
+     - `perl`
+   - `openconnect` (for now, until this can no longer connect to Cal Poly VPN)
+   - `openssh-server` (need for Vagrant)
 
-11. Update the firewall to allow SSH to pass through (so Vagrant can communicate even if the firewall is enabled)
+10. Update the firewall to allow SSH to pass through (so Vagrant can communicate even if the firewall is enabled)
     by using the command: `ufw allow ssh`
-12. Install the Insecure Vagrant SSH Public Key. This key is a well-known SSH key.
+11. Install the Insecure Vagrant SSH Public Key. This key is a well-known SSH key.
     However, this is not a security risk, because the key will be replaced by Vagrant when the machine is brought up by the user for the first time.
     Installing this key is non-optional, as Vagrant will use the corresponding private key to authenticate to the VM
     (Note: it is highly likely that Packer also uses the corresponding private key when this Box is used with the Vagrant builder).
@@ -57,7 +56,7 @@ draft: false
     chmod 600 ~/.ssh/authorized_keys
     ```
 
-13. Install the VirtualBox Guest Additions:
+12. Install the VirtualBox Guest Additions:
 
     1. In VirtualBox, insert the Guest Additions CD Image by navigating to `Devices > Insert Guest CD Image`
     2. In the VM, navigate to where the CD is mounted to. Some typical mount points are listed below:
@@ -75,9 +74,9 @@ draft: false
 
     4. On completion, VirtualBox Guest Additions should be installed.
 
-14. Clean the package cache: `apt-get clean`
-15. Shut down the virtual machine. The remaining steps should be taken on the host (outside of the VM).
-16. Package the manually configured VM into a Vagrant Box. In a terminal:
+13. Clean the package cache: `apt-get clean`
+14. Shut down the virtual machine. The remaining steps should be taken on the host (outside of the VM).
+15. Package the manually configured VM into a Vagrant Box. In a terminal:
 
     ```bash
     vagrant package --base NAME_OF_VM_IN_VIRTUALBOX --output OUTPUT_FILE.box
@@ -86,11 +85,11 @@ draft: false
     VBoxManage list vms
     ```
 
-17. If you will be building more Boxes on this system, or would like to use this base box directly,
+16. If you will be building more Boxes on this system, or would like to use this base box directly,
     it is strongly recommended to add the Box to your system's local Vagrant repository:
 
     ```bash
     vagrant box add --force --name lubuntu OUTPUT_FILE.box
     ```
 
-18. If you expect this Box to be used directly by clients (e.g., students), the Box should be hosted somewhere publicly accessible (e.g., an FTP/HTTP server, S3)
+17. If you expect this Box to be used directly by clients (e.g., students), the Box should be hosted somewhere publicly accessible (e.g., an FTP/HTTP server, S3)
