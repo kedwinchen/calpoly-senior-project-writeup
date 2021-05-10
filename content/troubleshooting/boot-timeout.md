@@ -4,6 +4,8 @@ date: 2021-04-12T23:33:17-07:00
 draft: true
 ---
 
+## Sample Error Message
+
 ```
 Timed out while waiting for the machine to boot. This means that
 Vagrant was unable to communicate with the guest machine within
@@ -23,9 +25,17 @@ If the box appears to be booting properly, you may want to increase
 the timeout ("config.vm.boot_timeout") value.
 ```
 
+## Cause
+
 This is probably caused by [the current version of VirtualBox being incompatible with WSL]({{< relref "/troubleshooting/wsl" >}}).
 
 This could also be due to resource exhaustion when the system is under higher load.
 Running `vagrant up` again, even without closing some applications, may resolve this issue.
 
 This may be similar to [this error]({{< relref "/troubleshooting/ssh-library-error" >}})
+
+## Resolution/Workaround Procedure
+
+1. If you are using WSL (Windows Subsystem for Linux), [you may have to temporarily disable WSL]({{< relref "/troubleshooting/wsl" >}}).
+2. If you are not using WSL (or have it disabled), try closing some [resource-intensive] applications and try running `vagrant up` again
+3. If the error persists, reboot your system, and try the command again.

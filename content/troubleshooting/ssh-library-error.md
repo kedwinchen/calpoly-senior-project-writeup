@@ -4,7 +4,7 @@ date: 2021-04-12T23:27:35-07:00
 draft: true
 ---
 
-This page referrs to the error that looks something like this:
+## Sample Error Message
 
 ```
 An error occurred in the underlying SSH library that Vagrant uses.
@@ -17,7 +17,11 @@ If the problem persists, please report a bug to the net-ssh project.
 timeout during server version negotiating
 ```
 
-This error usually appears when the host system is under high load. To resolve this issue, try the following:
+## Cause
+
+This error usually appears when the host system is under high load.
+
+## Resolution/Workaround Procedure
 
 1. Close resource-intensive applications
 2. Run `vagrant halt`, followed by `vagrant up`

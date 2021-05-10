@@ -4,7 +4,7 @@ date: 2021-05-05T11:23:33-07:00
 draft: true
 ---
 
-## Sample Error Message:
+## Sample Error Message
 
 ```
 There was an error while executing `VBoxManage`, a CLI used by Vagrant
