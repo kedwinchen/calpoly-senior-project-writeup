@@ -23,3 +23,18 @@ sudo "/Library/Application Support/VirtualBox/LaunchDaemons/VirtualBoxStartup.sh
    Also check **System Preferences** -> **Security and Privacy** to ensure that VirtualBox
    (may be listed as **Oracle VirtualBox** or similar) has the required permissions.
 4. Save any open work, and restart the computer to ensure that the changes take effect.
+
+## Alternate Instructions for macOS
+
+{{< hint info >}}
+This procedure supersedes the instructions at {{< relref "/instructions/common" >}}
+{{< /hint >}}
+
+1. Install [Homebrew](https://brew.sh)
+2. Run the following commands
+
+   ```shell
+   brew install --cask vagrant
+   brew install --cask virtualbox
+   brew install --cask virtualbox-extension-pack
+   ```
