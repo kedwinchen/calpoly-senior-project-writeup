@@ -6,7 +6,7 @@ draft: true
 
 ## Software Installation
 
-{{< details "Using a package manager (such as apt, dnf or brew)?" >}}
+{{< details "Using a package manager (such as apt, dnf, or brew)?" >}}
 
 **ATTENTION PACKAGE MANAGER USERS**
 
@@ -20,9 +20,20 @@ If (**_and only if_**) you can guarantee that the versions for the software
 available in your repositories are up-to-date with the latest versions available,
 you may disregard this warning.
 
+It should be noted that the Virtual Machines were built and tested with the following,
+so you should be fine if the version you install is greater than the following versions
+(backwards compatiblity is not guaranteed):
+
+<!-- These are the absolute minimum versions (they were the most recent at the time this was first written) -->
+
+- Oracle VM VirtualBox 6.1.18
+- Oracle VM VirtualBox Guest Additions 6.1.18
+- Oracle VM VirtualBox Host Extension Pack 6.1.18
+- Vagrant 2.2.14
+
 {{< /details >}}
 
-### Linux Users
+{{< details "Read this if you are using a Linux distribution" >}}
 
 The following section will call for downloading either an `.rpm` or `.deb` file,
 depending on your distribution.
@@ -38,6 +49,8 @@ depending on your distribution.
 - If you download another file format, you probably know how to install it manually
 
 If you need a refresher on what distribution you are using, execute `cat /etc/*release`
+
+{{< /details >}}
 
 ### Instructions
 
